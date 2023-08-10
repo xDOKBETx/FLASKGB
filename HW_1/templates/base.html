@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Магазин{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в наш магазин "BlaBlaBla"</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/category/clothing">Одежда</a></li>
+            <li><a href="/category/shoes">Обувь</a></li>
+            <li><a href="/category/jacket">Куртки</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Свяжитесь с нами: blablabla@store.com</p>
+    </footer>
+</body>
+</html>

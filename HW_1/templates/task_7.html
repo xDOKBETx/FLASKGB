@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>Главная</title>
+</head>
+<body>
+<div class="row">
+    <h1 class="col-12 text-monospace text-center">Новости</h1>
+    {% for item in news %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+        <p>{{ item.date }}</p>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>

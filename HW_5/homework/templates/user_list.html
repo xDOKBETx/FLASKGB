@@ -1,23 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>User List</title>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
 </head>
 <body>
-    <h1>User List</h1>
-    <table>
+<h1>{{ title }}</h1>
+
+<table class="table-style">
+    <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
+            <th class="columns-name">id</th>
+            <th class="columns-name">name</th>
+            <th class="columns-name">email</th>
+            <th class="columns-name">password</th>
         </tr>
+    </thead>
+    <tbody>
         {% for user in users %}
         <tr>
-            <td>{{ user.id }}</td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.email }}</td>
+            <td class="cell">{{ user.id }}</td>
+            <td class="cell">{{ user.name }}</td>
+            <td class="cell">{{ user.email }}</td>
+            <td class="cell">{{ user.password }}</td>
         </tr>
         {% endfor %}
-    </table>
+    </tbody>
+</table>
+
+<br>
+<form action="/get_html" method="post">
+    <input type="text" name="name" placeholder="name">
+    <input type="email" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <br>
+    <input class="button" type="submit" value="Добавить нового пользователя">
+</form>
+
 </body>
 </html>

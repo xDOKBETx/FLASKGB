@@ -1,0 +1,16 @@
+<table class="table-style">
+    <tr>
+        <th class="columns-name">id</th>
+        <th class="columns-name">name</th>
+        <th class="columns-name">email</th>
+        <th class="columns-name">password</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td class="cell">{{ user.id }}</td>
+        <td class="cell">{{ user.name }}</td>
+        <td class="cell">{{ user.email }}</td>
+        <td class="cell">{{ user.password }}</td>
+    </tr>
+    {% endfor %}
+</table>
